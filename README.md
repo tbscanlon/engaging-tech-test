@@ -51,10 +51,10 @@ We are looking for clean code, with sensible component structure and data propag
 For this challenge, we would like you to:
 
 - Design a REST API and database schema using Nodejs and Mongodb which allow the application to :
-    - connect the application to a mongodb database ( you can use https://mlab.com/ for free ), feel free to use the notes or a mock data, if you think this will take too much time.
+    - Connect the application to a mongodb database ( you can use https://mlab.com/ for free ), feel free to use the notes or a mock data, if you think this will take too much time.
     - Provide a list of products ordered by specific key ( id,name,category, etc...) passed as parameter on the get request.
     - Provide a single product found by id (passed as parameter)
-    - create tests using a your favourite library/framework
+    - Create tests using a your favourite library/framework
     
 We are looking for clean code, with a look for a future extension with a solid tests cases.
 
