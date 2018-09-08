@@ -1,4 +1,10 @@
-import { getBundleTotal, getCategoryBreakdown, getBundle, getItems } from './selectors';
+import {
+  getBundleTotal,
+  getCategoryBreakdown,
+  getBundleSize,
+  getBundle,
+  getItems
+} from './selectors';
 
 const ITEMS = [
   {
@@ -65,6 +71,13 @@ describe('[Selectors] Bundle', () => {
     it('Creates a breakdown of number of products per category', () => {
       result = getCategoryBreakdown(POPULATED_STATE);
       expect(result).toEqual(CATEGORY_BREAKDOWN);
+    });
+  });
+
+  describe('#getBundleSize', () => {
+    it('Returns the number of items in the bundle', () => {
+      result = getBundleSize(POPULATED_STATE);
+      expect(result).toEqual(POPULATED_STATE.bundle.length);
     });
   });
 

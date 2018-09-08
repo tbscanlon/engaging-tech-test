@@ -1,6 +1,6 @@
 import React from 'react';
 
-import BundleSummary from '../BundleSummary/BundleSummary';
+import BundleSummary from '../../containers/BundleSummary/BundleSummary';
 import ItemPicker from '../../containers/ItemPicker/ItemPicker';
 import BundlePreview from '../../containers/BundlePreview/BundlePreview';
 

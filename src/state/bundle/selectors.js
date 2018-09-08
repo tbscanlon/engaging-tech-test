@@ -1,4 +1,5 @@
 import { createSelector } from 'reselect';
+import { isEmpty } from 'lodash';
 
 const bundle = state => state.bundle;
 const items = state => state.items;
@@ -22,12 +23,17 @@ const createBreakdown = (bundle) => {
 
 export const getBundleTotal = createSelector(
   bundle,
-  bundleItems => calculateTotal(bundleItems)
+  bundleItems => !isEmpty(bundleItems) ? calculateTotal(bundleItems) : null
 );
 
 export const getCategoryBreakdown = createSelector(
   bundle,
   bundleItems => createBreakdown(bundleItems)
+);
+
+export const getBundleSize = createSelector(
+  bundle,
+  bundle => bundle.length
 );
 
 export const getBundle = createSelector(

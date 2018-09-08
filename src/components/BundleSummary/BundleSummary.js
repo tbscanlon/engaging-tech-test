@@ -3,24 +3,49 @@ import React from 'react';
 import './BundleSummary.css';
 
 /**
+ * Displays a small badge with the category name and number of items in
+ * that category within the current bundle.
+ * @param {string} categoryName The name of the category,
+ * @param {number} total The number of items in that category within
+ * the bundle. 
+ */
+const Badge = ({ categoryName, total }) => (
+  <React.Fragment>
+    {total}x <span className="bundle-summary--category">{categoryName}</span>
+  </React.Fragment>
+);
+
+/**
  * The Bundle Summary. Contains a running total of items added to the bundle,
  * and their total cost.
  */
-export default () => (
+const BundleSummary = ({ total, breakdown, numberOfItems }) => (
   <div className="bundle-summary">
     <div className="container">
       <div className="row">
         <div className="col-6 bundle-summary--left">
-          <p>5 items</p>
-
+          <p>{numberOfItems} items</p>
         </div>
-        <div className="col-6 bundle-summary--right">
-          3x <span className="bundle-summary--category">Bags</span>
-          2x <span className="bundle-summary--category">Offices</span>
-          1x <span className="bundle-summary--category">Mice</span>
-          <p className="bundle-summary--total-price">3.000,23</p>
-        </div>
+        {breakdown &&
+          <div className="col-6 bundle-summary--right">
+            {Object.keys(breakdown).map(key => (
+              <Badge categoryName={key} total={breakdown[key]} />
+              )
+            )}
+            {total &&
+              <p className="bundle-summary--total-price">{total}</p>
+            }
+          </div>
+        }
       </div>
     </div>
   </div>
 );
+
+BundleSummary.defaultProps = {
+  total: null,
+  breakdown: null,
+  numberOfItems: 0
+};
+
+export default BundleSummary;
