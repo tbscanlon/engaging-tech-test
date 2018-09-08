@@ -40,7 +40,7 @@ describe('[Component] Bundle Preview', () => {
 
   describe('Contents', () => {
     beforeEach(() => {
-      wrapper = shallow(<BundlePreview {...ITEMS} />);
+      wrapper = shallow(<BundlePreview items={ITEMS} />);
     });
 
     it('Creates an Item component for each item passed in', () => {

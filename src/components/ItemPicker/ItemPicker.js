@@ -5,27 +5,6 @@ import Item from '../Item/Item';
 import './ItemPicker.css';
 
 /**
- * Small set of dummy items in place to test behaviour until redux is set up.
- */
-const dummyItems = [
-  {
-    id: 1,
-    name: "Magic Trackpad 2",
-    category: "mice"
-  },
-  {
-    id: 2,
-    name: "Magic Trackpad 2",
-    category: "mice"
-  },
-  {
-    id: 3,
-    name: "Magic Trackpad 2",
-    category: "mice"
-  }
-]
-
-/**
  * The Item Picker sidebar. Displays potential items for the bundle.
  */
 export const ItemPicker = ({ items }) => (
@@ -37,7 +16,7 @@ export const ItemPicker = ({ items }) => (
 );
 
 ItemPicker.defaultProps = {
-  items: dummyItems
+  items: []
 }
 
 export default ItemPicker;

@@ -5,27 +5,6 @@ import Item from '../Item/Item';
 import './BundlePreview.css';
 
 /**
- * Small set of dummy items in place to test behaviour until redux is set up.
- */
-const dummyItems = [
-  {
-    id: 1,
-    name: "Magic Trackpad 2",
-    category: "mice"
-  },
-  {
-    id: 2,
-    name: "Magic Trackpad 2",
-    category: "mice"
-  },
-  {
-    id: 3,
-    name: "Magic Trackpad 2",
-    category: "mice"
-  }
-]
-
-/**
  * The Bundle Preview section. Displays the list of selected items in a bundle.
  */
 const BundlePreview = ({ items }) => (
@@ -40,7 +19,7 @@ const BundlePreview = ({ items }) => (
 )
 
 BundlePreview.defaultProps = {
-  items: dummyItems
+  items: []
 };
 
 export default BundlePreview;
