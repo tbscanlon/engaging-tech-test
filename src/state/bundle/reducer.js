@@ -19,12 +19,18 @@ export const initialState = {
 export const bundleReducer = (state = initialState, action) => {
   switch (action.type) {
     case types.LoadItems:
-      return { ...state, items: action.payload};
+      return {
+        ...state,
+        items: action.payload
+      };
 
     case types.Add:
       return {
         ...state,
-        bundle: [...state.bundle, state.items.find(item => item.id === action.payload)]
+        bundle: [
+          ...state.bundle,
+          state.items.find(item => item.id === action.payload)
+        ]
       };
     
     case types.Remove:

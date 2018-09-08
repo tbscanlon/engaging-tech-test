@@ -29,7 +29,7 @@ const BundleSummary = ({ total, breakdown, numberOfItems }) => (
         {breakdown &&
           <div className="col-6 bundle-summary--right">
             {Object.keys(breakdown).map(key => (
-              <Badge categoryName={key} total={breakdown[key]} />
+              <Badge key={key} categoryName={key} total={breakdown[key]} />
               )
             )}
             {total &&

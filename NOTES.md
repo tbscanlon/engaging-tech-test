@@ -7,7 +7,8 @@ Notes:
 - I moved away from using snapshot testing for components because I consider it to be brittle and difficult to reason about.
 - I split the App component out into separate components to better adhere to the single responsibility principle, and to make redux easier to implement and scale in the future.
 - I had trouble getting enzyme tests to behave exactly as I wanted.
-- I added redux for state management, as I consider it to be an excellent scalable solution. Considerations such as fetching data from or posting data to APIs can be implemented easily on top of a redux architecture. 
+- I added redux for state management, as I consider it to be an excellent scalable solution. Considerations such as fetching data from or posting data to APIs can be implemented easily on top of a redux architecture.
+- There are bugs when working with multiple instances of the same item within a bundle. This is happening because I'm using the id as a key across the various items, which isn't actually unique. I would fix this by creating and inserting unique ID numbers specific to the front-end at some point in the user journey - probably when adding products to a bundle.
 
 ### User Stories
 ```
