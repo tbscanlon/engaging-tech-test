@@ -1,21 +1,28 @@
-import React from 'react';
-import './App.css';
+import React, { Component } from 'react';
 
-import BundleSummary from './components/BundleSummary/BundleSummary';
-import ItemPicker from './components/ItemPicker/ItemPicker';
-import BundlePreview from './components/BundlePreview/BundlePreview';
+import { store } from './state';
+import { actions } from './state/bundle/actions'
+import items from './items';
+
+import Layout from './components/Layout/Layout';
+
+import './App.css';
 
 /**
  * The top-level Application component.
  */
-export default () => (
-  <div className="wrapper">
-    <BundleSummary />
-    <div className="container bundle-builder">
-      <div className="row">
-        <ItemPicker />
-        <BundlePreview />
-      </div>
-    </div>
-  </div>
-);
+class App extends Component {
+  /**
+   * Loads the items into the application's state on
+   * initialisation.
+   */
+  componentDidMount() {
+    store.dispatch(actions.load(items));
+  }
+
+  render() {
+    return <Layout />
+  }
+}
+
+export default App;

@@ -6,7 +6,7 @@ export default [
     price: 18.99
   },
   {
-    id: 10001,
+    id: 10002,
     name: "15,6 inch  Laptop bag M44",
     category: "laptopBags",
     price: 16.99

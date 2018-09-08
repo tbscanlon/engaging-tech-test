@@ -1,3 +1,7 @@
+/**
+ * Keys for the actions that can be performed
+ * on the bundle state.
+ */
 export const types = {
   LoadItems: '[Bundle] Load Items',
   Add: '[Bundle] Add',
@@ -19,6 +23,10 @@ const remove = itemId => ({
   payload: itemId
 });
 
+/**
+ * Constructors for actions that can be performed
+ * on the bundle state.
+ */
 export const actions = {
   load: load,
   add: add,
