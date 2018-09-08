@@ -6,6 +6,9 @@ import './BundlePreview.css';
 
 /**
  * The Bundle Preview section. Displays the list of selected items in a bundle.
+ * @param Items The list of items within the bundle.
+ * @param {Function} handleClick A callback to be executed when an item is
+ * clicked.
  */
 const BundlePreview = ({ items, handleClick }) => (
   <div className="col-8">

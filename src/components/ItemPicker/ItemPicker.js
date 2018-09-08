@@ -22,7 +22,8 @@ export const ItemPicker = ({ items, handleClick }) => (
 );
 
 ItemPicker.defaultProps = {
-  items: []
+  items: [],
+  handleClick: () => null
 }
 
 export default ItemPicker;

@@ -7,8 +7,10 @@ import Item from './Item';
 
 const ITEM_PROPS = {
   name: "Magic Trackpad 2",
-  category: "mice"
+  category: "mice",
+  id: 1
 };
+const ON_CLICK = jest.fn();
 
 describe('[Component] Item', () => {
   let wrapper;
@@ -44,7 +46,7 @@ describe('[Component] Item', () => {
 
   describe('With item props', () => {
     beforeEach(() => {
-      wrapper = shallow(<Item {...ITEM_PROPS} />);
+      wrapper = shallow(<Item {...ITEM_PROPS} onClick={ON_CLICK} />);
     });
 
     it("Sets the title to the name prop", () => {
@@ -58,15 +60,25 @@ describe('[Component] Item', () => {
     it('Does not have a close button visible', () => {
       expect(wrapper.html()).not.toContain('remove-item');
     });
+
+    it('Calls the handed in function when the component is clicked', () => {
+      wrapper.find('.item').simulate('click');
+      expect(ON_CLICK).toHaveBeenCalled();
+    });
   });
 
   describe('With a close button', () => {
     beforeEach(() => {
-      wrapper = shallow(<Item {...ITEM_PROPS} hasCloseButton />)
+      wrapper = shallow(<Item {...ITEM_PROPS} onClick={ON_CLICK} hasCloseButton />)
     });
 
     it('Displays a close button', () => {
       expect(wrapper.html()).toContain('remove-item');
+    });
+
+    it('Calls the prop function when clicked', () => {
+      wrapper.find('.remove-item').simulate('click');
+      expect(ON_CLICK).toHaveBeenCalled();
     });
   });
 });

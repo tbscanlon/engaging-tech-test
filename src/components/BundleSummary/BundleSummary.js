@@ -9,7 +9,7 @@ import './BundleSummary.css';
  * @param {number} total The number of items in that category within
  * the bundle. 
  */
-const Badge = ({ categoryName, total }) => (
+export const Badge = ({ categoryName, total }) => (
   <React.Fragment>
     {total}x <span className="bundle-summary--category">{categoryName}</span>
   </React.Fragment>
@@ -18,6 +18,10 @@ const Badge = ({ categoryName, total }) => (
 /**
  * The Bundle Summary. Contains a running total of items added to the bundle,
  * and their total cost.
+ * @param {object} breakdown A list of categories, and number of items in
+ * the bundle that match that category.
+ * @param {number} total The total cost of all the items in the bundle.
+ * @param {number} numberOfitems The number of items within the bundle.
  */
 const BundleSummary = ({ total, breakdown, numberOfItems }) => (
   <div className="bundle-summary">
