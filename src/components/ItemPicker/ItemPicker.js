@@ -7,10 +7,10 @@ import './ItemPicker.css';
 /**
  * The Item Picker sidebar. Displays potential items for the bundle.
  */
-export const ItemPicker = ({ items }) => (
+export const ItemPicker = ({ items, handleClick }) => (
   <div className="col-4">
     <ul className="item-picker">
-      {items.map(itemInfo => <Item key={itemInfo.id} {...itemInfo} />)}
+      {items.map(itemInfo => <Item key={itemInfo.id} onClick={handleClick} {...itemInfo} />)}
     </ul>
   </div>
 );

@@ -24,7 +24,7 @@ export const bundleReducer = (state = initialState, action) => {
     case types.Add:
       return {
         ...state,
-        bundle: [...state.bundle, action.payload]
+        bundle: [...state.bundle, state.items.find(item => item.id === action.payload)]
       };
     
     case types.Remove:

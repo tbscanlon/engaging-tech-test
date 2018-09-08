@@ -45,13 +45,13 @@ describe('[Reducer] Bundle', () => {
 
   describe('Adding items to the bundle', () => {
     it('Adds the selected item to the bundle array', () => {
-      result = reducer(STATE, actions.add(ITEMS[0]));
+      result = reducer(STATE, actions.add(ITEMS[0].id));
       expect(result.bundle).toContain(ITEMS[0]);
     });
 
     it('Adds subsequent items to the bundle', () => {
-      testState = reducer(STATE, actions.add(ITEMS[0]));
-      result = reducer(testState, actions.add(ITEMS[1]));
+      testState = reducer(STATE, actions.add(ITEMS[0].id));
+      result = reducer(testState, actions.add(ITEMS[1].id));
       expect(result.bundle).toEqual([ITEMS[0], ITEMS[1]]);
     });
   });
