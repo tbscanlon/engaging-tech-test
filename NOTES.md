@@ -7,6 +7,7 @@ Notes:
 - I moved away from using snapshot testing for components because I consider it to be brittle and difficult to reason about.
 - I split the App component out into separate components to better adhere to the single responsibility principle, and to make redux easier to implement and scale in the future.
 - I had trouble getting enzyme tests to behave exactly as I wanted.
+- I added redux for state management, as I consider it to be an excellent scalable solution. Considerations such as fetching data from or posting data to APIs can be implemented easily on top of a redux architecture. 
 
 ### User Stories
 ```
