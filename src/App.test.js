@@ -1,12 +1,21 @@
 import React from 'react';
-import App from './App';
-
-import Enzyme, { shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 
-Enzyme.configure({ adapter: new Adapter() });
+import { configure, shallow } from 'enzyme';
 
-it('renders', () => {
-  const div = shallow(<App />);
-  expect(div).toMatchSnapshot();
+import App from './App';
+
+describe('[Component] App', () => {
+  let wrapper;
+
+  beforeEach(() => {
+    configure({ adapter: new Adapter() });
+    wrapper = shallow(<App />)
+  });
+
+  describe('Initialisation', () => {
+    it('Renders successfully', () => {
+      expect(wrapper.exists()).toBeTruthy();
+    });
+  });
 });
